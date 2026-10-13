@@ -25,8 +25,7 @@ public class HydroGuardWebApplicationFactory : WebApplicationFactory<Program>
   {
     // Define ambiente de testes para não rodar migrations no Program.cs
     builder.UseEnvironment("Testing");
-    builder.ConfigureAppConfiguration((_, config) => config.AddInMemoryCollection(
-      new Dictionary<string, string?> { ["Jwt:Key"] = "TestOnly-Key-At-Least-32-Bytes-Long-2026" }));
+    builder.UseSetting("Jwt:Key", "TestOnly-Key-At-Least-32-Bytes-Long-2026");
     var databaseName = "HydroGuardTests-" + Guid.NewGuid().ToString("N");
 
     builder.ConfigureServices(services =>
