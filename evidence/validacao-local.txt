@@ -1,0 +1,20 @@
+HydroGuard - revisão com testes exclusivamente em C#
+Data UTC: 2026-10-13T02:00:29.455612+00:00
+Escopo: verificações estáticas; não comprova build, testes ou deploy.
+
+$ bash -n scripts/deploy.sh
+Exit code: 0
+YAML parse e sintaxe Bash dos passos inline: OK
+Jobs, dependências, instalação SDK e promoção do mesmo digest GHCR: OK
+Sem Python no workflow, deploy ou diretório de testes: OK
+3 projetos .NET 8 na solution; XML e referências de projetos: OK
+20 testes xUnit declarados (não executados): OK
+Smoke HTTP e pré-validação em C#, sem pacotes externos: OK
+Compose: SQL sem porta pública, volume e rede interna: OK
+
+Execuções pendentes:
+dotnet: não instalado neste ambiente
+docker: não instalado neste ambiente
+Build C# e testes xUnit/smoke: NÃO executados nesta preparação.
+GitHub Actions, imagem GHCR e deploys staging/produção: NÃO executados.
+Nomes/RMs e prints reais: ainda pendentes.
